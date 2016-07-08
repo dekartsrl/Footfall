@@ -269,8 +269,10 @@ void ofApp::draw()
     contourFinder.draw();
     
     // Draw result of output
-    drawMat(output, 0, 0,320,240);
-    
+//  drawMat(frame,332,250,320.240);
+//  drawMat(frame,0,0,320,240);
+    drawMat(frame,0,0,320,240);
+    drawMat(output,321,0,640,240);  
     // Draw tracker
     vector<Blob>& followers = tracker.getFollowers();
     for(int i = 0; i < followers.size(); i++)
@@ -278,7 +280,7 @@ void ofApp::draw()
         followers[i].draw();
     }
     
-    string displayString = "Coming In: " + ofToString(countIn) + " Going Out: " + ofToString(countOut) + " Overall Count: " + ofToString(count);
+    string displayString = " In: " + ofToString(countIn) + "Out: " + ofToString(countOut) + " Overall Count: " + ofToString(count);
     ofDrawBitmapStringHighlight(displayString,5,ofGetHeight()-15);
     
     // Threshold Lines
