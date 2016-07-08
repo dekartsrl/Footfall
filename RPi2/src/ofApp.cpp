@@ -194,7 +194,10 @@ void ofApp::update()
                 formIn.addFormField("secret", _secretKey);
                 formIn.addFormField("location", _locationID);
                 formIn.addFormField("count", httpString);
-                formIn.addFormField("rawtimestamp", ofGetTimestampString("%Y-%m-%d %H:%M:%s"));
+                formIn.addFormField("rawtimestamp", ofGetTimestampString("%s"));
+                formIn.addFormField("howmanyout", ofToString(followers[i].howManyOut()));
+                formIn.addFormField("wasIn", ofToString(followers[i].wasIn()));
+                formIn.addFormField("wasOut", ofToString(followers[i].wasOut()));
                 formIn.addFormField("submit","1");
                 httpUtils.addForm(formIn);
                 counterLatches[i] = false;
@@ -217,7 +220,9 @@ void ofApp::update()
                 formOut.addFormField("secret", _secretKey);
                 formOut.addFormField("location", _locationID);
                 formOut.addFormField("count", httpString);
-                formOut.addFormField("rawtimestamp", ofGetTimestampString("%Y-%m-%d %H:%M:%s"));
+                formOut.addFormField("wasIn", ofToString(followers[i].wasIn()));
+                formOut.addFormField("wasOut", ofToString(followers[i].wasOut()));
+                formOut.addFormField("rawtimestamp", ofGetTimestampString("%s"));
                 formOut.addFormField("submit","1");
                 httpUtils.addForm(formOut);
                 counterLatches[i] = false;
