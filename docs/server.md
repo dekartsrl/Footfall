@@ -1,6 +1,8 @@
 Footfall Server
 ===
 
+NOTE: *If building for a Dekart project, skip these steps and refer to the project documentation for the server.*
+
 This guide is requires a base knowledge of the command line.
 
 ###Option 1 - Local Server (Raspberry Pi)

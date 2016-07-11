@@ -3,7 +3,7 @@
 
 ##How to Build
 
-Download a Noobs Package from [here](https://www.raspberrypi.org/downloads/noobs/).
+Download a Noobs Package from [here](https://www.raspberrypi.org/downloads/noobs/) or any other Raspbian image.
 
 Install Jessie.
 
@@ -19,7 +19,7 @@ and expand the filesytem and reboot.
 
 You will need a few extra packages to build the RPi application.
 
-Copy the getrepos.sh file and place it inside the addons folder of your openFrameworks folder. 
+Copy the getrepos.sh file and place it inside the addons folder of your openFrameworks folder (`openFrameworks/addons`).
 
 Run the script by navigating to the addons folder and entering the following command into Terminal 
 
@@ -69,9 +69,15 @@ You will also need to update your Pi
 
 `sudo raspi-update`
 
-Assuming you have [built and compiled oF](http://forum.openframeworks.cc/t/raspberry-pi-2-setup-guide/18690).
+Build and compile openFrameworks. Guides can be found in the docs folder for what was used at the time of writing or on the openFrameworks website for the [latest version](http://openframeworks.cc/setup/raspberrypi/raspberry-pi-getting-started/)
 
-Create a new app your openFrameworks apps/myApps directory then copy the source code across, including the addons.make file.
+NOTE: Jessie on the raspberrypi2 is built with armv6 support, even though the chip is armv7. Choose the armv6 version of openFrameworks unless the guide for the latest version guide states overwise. 
+
+Assuming you have [built and compiled oF](http://openframeworks.cc/setup/raspberrypi/raspberry-pi-getting-started/).
+
+Create a new app your openFrameworks apps/myApps directory then copy the source code across, including the addons.make file.::
+    
+    openframeworks/apps/myApps/projectFolder (or any other name)
 
 To build the app.
 
